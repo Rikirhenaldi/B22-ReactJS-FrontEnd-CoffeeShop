@@ -5,20 +5,20 @@ import '../App.css'
 import imgpromo from '../asset/img/spageti.png'
 import axios from 'axios'
 
-class BoxProducts extends React.Component{
-    state = {
-        data: []
+class BoxProducts extends React.Component{ 
+  state = {
+        data: [],
     }
     componentDidMount(){
-        this.getData()
+        this.getData(5)
     }
-    getData = async() => {
-        const {data} = await axios.get('http://localhost:8080/products/category/5')
+    getData = async(id) => {
+        const {data} = await axios.get(`http://localhost:8080/products/category/${id}`)
         this.setState({data: data.results})
     }
     render(){
         return(
-            <section class="flex w-full">
+            <section className="flex w-full">
             <div className="cupon border-r-2 border-t-2">
                 <div className="flex flex-col justify-center items-center text-center space-y-14 py-20">
                     <div>
@@ -67,11 +67,11 @@ class BoxProducts extends React.Component{
             <div className="flex-1 space-y-12 border-t-2 ">
                 <div className="navigasi mx-28 text-xl text-gray-400 mt-8">
                     <ul className="flex flex-row justify-between items-center text-center">
-                        <li><Link to="/Product/Category/5" className="text-yellow-800 font-bold underline ">Favorite Products</Link></li>
-                        <li><Link to="/Product/Category/1" className="hover:text-yellow-800">Coffee</Link></li>
-                        <li><Link to="/Product/Category/2" className="hover:text-yellow-800">Non Coffee</Link></li>
-                        <li><Link to="/Product/Category/3" className="hover:text-yellow-800">Foods</Link></li>
-                        <li><Link to="/Product/Category/4" className="hover:text-yellow-800">Add-on</Link></li>
+                        <li><button onClick = {()=>this.getData(5)} className="text-yellow-800 font-bold underline ">Favorite Products</button></li>
+                        <li><button onClick = {()=>this.getData(1)} className="hover:text-yellow-800">Coffee</button></li>
+                        <li><button onClick = {()=>this.getData(2)} className="hover:text-yellow-800">Non Coffee</button></li>
+                        <li><button onClick = {()=>this.getData(3)} className="hover:text-yellow-800">Foods</button></li>
+                        <li><button onClick = {()=>this.getData(4)} className="hover:text-yellow-800">Add-on</button></li>
                     </ul>
                 </div>
          

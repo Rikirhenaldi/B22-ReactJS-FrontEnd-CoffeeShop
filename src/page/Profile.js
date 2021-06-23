@@ -1,18 +1,14 @@
 import React from 'react';
-import NavbarLog from '../component/NavbarLog';
-import Footer from '../component/Footer';
 import BoxProfile from '../component/BoxProfile'
 
 class Profile extends React.Component {
-    state = {}
+    // state = {}
     render() {
         return (
-            <>
-                <NavbarLog />
-                <BoxProfile />
-                <Footer />
+          <div>
+            <BoxProfile />
                 
-            </>
+          </div>
         );
     }
 }

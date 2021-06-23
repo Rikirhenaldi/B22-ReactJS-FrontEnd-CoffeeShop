@@ -137,9 +137,10 @@ input, button:focus{
 }
 .bannerpayment .boxmiddle .boxleft{
   width: 400px;
-  height: 650px;
+  height: fit-content;
   background:white;
   border-radius: 20px;
+  box-sizing: content-box;
 }
 .bannerpayment .boxmiddle .boxright .adress .boxadress{
   width: 400px;

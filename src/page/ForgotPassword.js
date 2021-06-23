@@ -1,17 +1,15 @@
 import React from 'react';
-import Footer from '../component/Footer';
 import BannerForgotPass from '../component/BannerForgotPass';
 
 
 class ForgotPassword extends React.Component {
-    state = {}
+    // state = {}
     render() {
         return (
-            <>
-                <BannerForgotPass />
-                <Footer />
+          <div>
+            <BannerForgotPass />
                 
-            </>
+          </div>
         );
     }
 }
