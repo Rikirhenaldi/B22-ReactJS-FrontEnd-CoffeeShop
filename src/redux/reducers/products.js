@@ -1,6 +1,7 @@
 const initialState = {
   data: [],
   details: {},
+  order : {},
   pageInfo: {}
 }
 
@@ -26,7 +27,8 @@ const products = (state= initialState, action) => {
     case 'PRODUCTS_GET_DETAILS' : {
       return {
         ...state,
-        details: action.payload
+        details: action.payload,
+        order: action.payload.order
       }
     }
     default: {

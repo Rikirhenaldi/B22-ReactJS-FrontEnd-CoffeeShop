@@ -18,12 +18,13 @@
       "react"
     ],
     "rules": {
-      "react/jsx-indent": [1, 2],
+      // "react/jsx-indent": [1, 2],
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/no-unknown-property": 0,
       "react/forbid-prop-types": 0,
       "react/no-unescaped-entities": 0,
       "react/prop-types": 0,
-      "no-unused-vars": 0
+      "no-unused-vars": 0,
+      "react/jsx-indent" : 0
     }
   }

@@ -198,12 +198,21 @@ input[type='radio']:checked:after {
 .bannerhistory{
   background: url("./asset/img/bannerhistory.png");
   width: 100%;
-  height: 1200px;
+  height: fit-content;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-bottom: 30px;
+}
+.bannerhistory.dua{
+  background: url("./asset/img/bannerhistory.png");
+  width: 100%;
+  height: 1112px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 30px;
 }
 .bannerhistory .repeatbox .itemlist{
-  width: 330px;
+  width: 360px;
   height: 110px;
   background-color: white;
   border-radius: 10px;
@@ -246,9 +255,10 @@ input[type='checkbox']:checked:after {
 }
 .modals .boxmodals{
   background: white;
-  width: 600px;
-  height: 300px;
+  width: 1100px;
+  height: 600px;
   border-radius: 15px;
+  box-sizing: content-box;
 }
 /* forgot password */
 
@@ -312,4 +322,57 @@ input[type='checkbox']:checked:after {
 .checkout{
   width: 300px; 
   height: 130px;
+}
+
+.banner{
+  background: url("/src/asset/img/bprofile.png");
+  height: 1120px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner .user{
+  width: 90%;
+}
+.banner .rowbox1{
+  width: 90%;
+}
+.banner .title{
+  width: 750px;
+}
+.boxpict{
+ width: 310px;
+ height: 358px;
+ border-bottom: #6A4029 solid 14px;
+}
+.rowbox1 .boxpict .userName{
+  height: 210;
+}
+.boxcontact{
+  width: 802px;
+  height: 358px;
+  border-bottom: #6A4029 solid 14px;
+}
+.boxcontact .info{
+  width: 750px;
+  height: 300px;
+}
+.boxcontact .info .col1{
+  width: 300px;
+  height: 250px;
+  margin-right: 50px;
+}
+.boxcontact .info .col2{
+  width: 300px;
+  height: 250px;
+}
+/* rowbox 2 */
+.boxcontact.edit{
+   width: 802px;
+   height: 418px;
+   border-bottom: #6A4029 solid 14px;
+}
+.confirmation{
+  width: 310px;
+  height: 418px;
 }

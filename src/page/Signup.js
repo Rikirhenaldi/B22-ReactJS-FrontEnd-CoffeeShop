@@ -5,7 +5,7 @@ import bannerlogin from '../asset/img/BannerSU.png'
 import logo from '../asset/img/coffee 1.png'
 import glogo from '../asset/img/glogo.png'
 
-import { toggleAuth, authRegister } from '../redux/action/auth'
+import { toggleAuth, authRegister } from '../redux/actions/auth'
 import propTypes from 'prop-types'
 import { connect } from 'react-redux'
 

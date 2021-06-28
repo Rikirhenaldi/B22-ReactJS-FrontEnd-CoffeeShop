@@ -1,13 +1,25 @@
 import { combineReducers } from 'redux'
+import { persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' 
 
 import carts from './carts'
 import auth from './auth'
 import products from './products'
+import payment from './payment'
+import history from './history'
+import profile from './profile'
 
-const reducer = combineReducers({
+const persistAuth = {
+  storage,
+  key: 'auth'
+}
+const rootReducer = combineReducers({
   carts,
-  auth,
-  products
+  auth : persistReducer(persistAuth, auth),
+  products,
+  payment,
+  history,
+  profile
 })
 
-export default reducer
+export default rootReducer

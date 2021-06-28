@@ -10,7 +10,7 @@ import bannerlogin from '../asset/img/BannerSU.png'
 import logo from '../asset/img/coffee 1.png'
 import glogo from '../asset/img/glogo.png'
 
-import { toggleAuth, authLogin } from '../redux/action/auth'
+import { toggleAuth, authLogin } from '../redux/actions/auth'
 
 class Login extends React.Component {
     state = {

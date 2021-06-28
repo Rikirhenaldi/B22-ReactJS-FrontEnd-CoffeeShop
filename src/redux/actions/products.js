@@ -33,7 +33,10 @@ export const getDetails = (id) => {
     const {data} = await http().get(`${URL}/products/${id}`)
     dispatch({
       type: 'PRODUCTS_GET_DETAILS',
-      payload: data.results
+      payload: {
+        item: data.results,
+        order : data.order
+      }
 
     })
   }

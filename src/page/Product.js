@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import imgpromo from '../asset/img/spageti.png'
 import { Link } from 'react-router-dom'
 
-import { getProducts } from '../redux/action/products';
+import { getProducts } from '../redux/actions/products';
 
 class Product extends React.Component {
     componentDidMount(){

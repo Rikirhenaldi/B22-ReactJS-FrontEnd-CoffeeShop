@@ -4,14 +4,17 @@ import './index.css'
 import { Provider } from 'react-redux'
 import Router from './route/routes'
 
-import store from './redux/store'
-
+import reduxConfig from './redux/store'
+import { PersistGate } from 'redux-persist/integration/react'
 // import App from './App';
 import reportWebVitals from './reportWebVitals'
+const redux = reduxConfig()
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router />
+  <Provider store={redux.store}>
+    <PersistGate persistor={redux.persistor}>
+      <Router />
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 )

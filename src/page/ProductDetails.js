@@ -1,39 +1,56 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import { getDetails } from '../redux/action/products';
-import { addProducts } from '../redux/action/carts';
+import { getDetails } from '../redux/actions/products';
+import { addProducts } from '../redux/actions/carts';
 
 
-class ProductDetails extends React.Component {
+class ProductDetails extends React.Component { 
   state = {
     counter : 1,
-  }  
+}
     componentDidMount(){
       this.props.getDetails(this.props.match.params.id)
     }
-
-    
-    render() {
-      const {details} = this.props.products
-      
-      const SumCount = () =>{
-        if(this.state.counter >= `${details?.quantity}`){
-          window.alert(`quantity of this products just ${details?.quantity}`)
+    SumCount = () =>{
+      const {quantity} = this.props.products.details.item
+        if(this.state.counter >= quantity){
+          window.alert(`quantity of this products just ${quantity}`)
         }else{
           this.setState({
-              counter: this.state.counter + 1
-            })
-        }
+            counter: this.state.counter + 1
+          })
+        console.log(this.state.counter)
       }
-      const MinCount = () =>{
-          if(this.state.counter <= 0){
-              window.alert("can't decrease number less than 0")
-          }else{
-              this.setState({
-                  counter: this.state.counter - 1
-                })
-          }
-        }
+    }
+
+    MinCount = () =>{
+      if(this.state.counter <= 1){
+          window.alert("can't orders product less than 1 ")
+      }else{
+        this.setState({
+          counter: this.state.counter - 1
+        })
+      }
+    }
+
+    render() {
+      const {item} = this.props.products.details
+      const {order} = this.props.products
+      order.amount = this.state.counter
+      // const SumCount = () =>{
+      //   if(`${order?.amount}` >= `${item?.quantity}`){
+      //     window.alert(`quantity of this products just ${item?.quantity}`)
+      //   }else{
+      //       const count = `${order?.amount + 1}`
+      //   }
+      // }
+      // const MinCount = () =>{
+      //     if(`${order?.amount}` <= 1){
+      //         window.alert("can't orders product less than 1 ")
+      //     }else{
+      //       const count = `${order?.amount}` - 1
+      //     }
+      //   }
       
         return (
           <>
@@ -44,17 +61,17 @@ class ProductDetails extends React.Component {
                 <div className="cardLeft flex flex-col items-center text-center space-y-20 py-10">
                   <div className="productName flex flex-row space-x-1">
                     <div>Favorite & Promo</div>
-                    <div className=" text-yellow-900 font-bold">{details?.name}</div>
+                    <div className=" text-yellow-900 font-bold">{item?.name}</div>
                   </div>
                   <div className="pictPrice uppercase space-y-6 flex flex-col justify-center items-center">
-                    <div><img className="w-80 h-80 rounded-full" src={details?.img_link} alt=""/></div>
+                    <div><img className="w-80 h-80 rounded-full" src={item?.img_link} alt=""/></div>
                     <div className=" space-y-4" >
-                      <div className="text-5xl font-extrabold">{details?.name}</div>
-                      <div className=" text-2xl font-medium">IDR. {details.price}</div>
+                      <div className="text-5xl font-extrabold">{item?.name}</div>
+                      <div className=" text-2xl font-medium">IDR. {item?.price}</div>
                     </div>
                   </div>
                   <div className=" space-y-4">
-                    <div><button className="font-medium w-72 h-14 bg-yellow-900 text-white flex justify-center items-center rounded-xl" onClick={()=>this.props.addProducts(details)} >Add to Cart</button></div>
+                    <div><button className="font-medium w-72 h-14 bg-yellow-900 text-white flex justify-center items-center rounded-xl" onClick={()=>this.props.addProducts(item, order)} >Add to Cart</button></div>
                     <div><button className="font-bold w-72 h-14 bg-yellow-400 text-yellow-900 flex justify-center items-center rounded-xl">Ask a Staff</button></div>
                   </div>
                 </div>
@@ -68,7 +85,7 @@ class ProductDetails extends React.Component {
                   <div className="flex-col justify-center items-center space-y-14">
                     <div className=" text-yellow-900 pr-36 text-2xl">Delivery only on <span className="font-bold">Monday to friday</span> at  <span className="font-bold">1 - 7 pm</span></div>
                     <div className="">
-                      <p className="leading-8 text-2xl text-yellow-900">{details?.description}</p>
+                      <p className="leading-8 text-2xl text-yellow-900">{item?.description}</p>
                     </div>
                     <div className="flex flex-col justify-center items-center space-y-8">
                       <div className="font-bold text-2xl ">Choose a size</div>
@@ -100,22 +117,22 @@ class ProductDetails extends React.Component {
             <section>
               <div className="boxOrder flex flex-row bg-gray-200 justify-between items-center px-48">
                 <div className="totalOrder bg-white shadow-2xl rounded-2xl flex flex-row relative top-10 mr-12">
-                  <div className="flex justify-center items-center pl-12"><img className="w-24 h-24 rounded-full" src={details?.img_link}alt=""/></div>
+                  <div className="flex justify-center items-center pl-12"><img className="w-24 h-24 rounded-full" src={item?.img_link}alt=""/></div>
                   <div className="flex flex-col justify-center items-start pl-8 w-60 space-y-2">
-                    <div className=" uppercase font-extrabold text-2xl">{details?.name}</div>
+                    <div className=" uppercase font-extrabold text-2xl">{item?.name}</div>
                     <div className="font-medium">
-                      <span>{this.state.counter}</span>
+                      <span>{order?.amount}</span>
                       <span>(Large)</span>
                     </div>
                     <div className="font-medium">
-                      <span>{this.state.counter}</span>
+                      <span>{order?.amount}</span>
                       <span>(Regular)</span>
                     </div>
                   </div>
                   <div className="flex justify-center items-center font-extrabold text-2xl flex-1 space-x-12">
-                    <button onClick= {MinCount} className="flex justify-center items-center text-center w-14 h-14 rounded-full bg-yellow-200">-</button>
-                    <div>{this.state.counter}</div>
-                    <button onClick= {SumCount} className="flex justify-center items-center text-center w-14 h-14 rounded-full bg-yellow-200">+</button>
+                    <button onClick= {this.MinCount} className="flex justify-center items-center text-center w-14 h-14 rounded-full bg-yellow-200">-</button>
+                    <div>{order?.amount}</div>
+                    <button onClick= {this.SumCount} className="flex justify-center items-center text-center w-14 h-14 rounded-full bg-yellow-200">+</button>
                   </div>
                 </div>
                 <button className="checkout bg-yellow-400 rounded-xl relative top-10  shadow-xl">
