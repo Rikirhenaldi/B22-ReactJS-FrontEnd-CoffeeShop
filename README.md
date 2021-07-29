@@ -1,10 +1,10 @@
 <h1 align='center'>React JS - #Coffee Shop</h1>
   <p align="center">
-    <a href="link_deploy">View Demo</a>
+    <a href="https://hardcore-swanson-a934ad.netlify.app/">View Demo</a>
     ·
-    <a href="https://github.com/arkbootcamp/week5-web9-beginerFrontend/issues">Report Bug</a>
+    <a href="https://github.com/Rikirhenaldi/B22-Backend-Beginner/issues">Report Bug</a>
     ·
-    <a href="https://github.com/arkbootcamp/week5-web9-beginerFrontend/pulls">Request Feature</a>
+    <a href="https://github.com/Rikirhenaldi/B22-Backend-Beginner/pulls">Request Feature</a>
   </p>
 
 ![Image Banner](src/asset/img/homepageCS.png)
