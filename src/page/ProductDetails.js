@@ -36,7 +36,7 @@ class ProductDetails extends React.Component {
     render() {
       const {item} = this.props.products.details
       const {order} = this.props.products
-      order.amount = this.state.counter
+      order.amount =+ this.state.counter
       // const SumCount = () =>{
       //   if(`${order?.amount}` >= `${item?.quantity}`){
       //     window.alert(`quantity of this products just ${item?.quantity}`)

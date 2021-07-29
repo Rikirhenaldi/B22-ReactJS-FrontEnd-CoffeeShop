@@ -32,17 +32,17 @@ class Signup extends React.Component {
         return (
           <div>
             <section className="flex flex-row">
-              <div className="img">
+              <div className="img sm:hidden md:block">
                 <img className="" src={bannerlogin} alt=""/>
               </div>
-              <div className="w-8/12">
+              <div className="w-screen px-24 md:w-8/12">
                 <div className="flex flex-col justify-between mb-16 mt-16">
-                  <div className="logo flex justify-between mb-10">
+                  <div className="logo w-full flex justify-between mb-10 md:flex justify-between mb-10 ">
                     <div className="flex items-center">
-                      <figure className="ml-16 "><img src={logo} alt=""/></figure>
-                      <figcaption className="ml-4 text-sm font-bold">Coffee Shop</figcaption>
+                      <figure className="md:ml-16 "><img src={logo} alt=""/></figure>
+                      <figcaption className="ml-2 md:ml-4 text-sm font-bold">Coffee Shop</figcaption>
                     </div>
-                    <div className="flex justify-center items-center">
+                    <div className="flex justify-center items-center -mr-16 md:flex justify-center items-center">
                       <button className="flex mr-16 justify-center items-center font-medium h-9 w-32 bg-yellow-400 py-3 px-8 rounded-full text-sm">
                         <Link to="/Login">
                           Login
@@ -51,12 +51,12 @@ class Signup extends React.Component {
                     </div>
                   </div>
                   <div className="flex flex-col justify-center items-center">
-                    <form onSubmit={this.onRegister} action="" className="flex flex-col w-8/12">
+                    <form onSubmit={this.onRegister} action="" className="flex flex-col w-full md:flex flex-col w-8/12">
                       <header className="mb-8 text-center text-3xl font-bold text-yellow-800">Sign Up</header>
-                      {errMsg!=="" && <div className="bg-red-300 text-red-900 font-bold px-5 py-5 rounded-md text-center">{errMsg}</div>}
-                      {sccMsg!=="" && <div className="bg-green-300 text-green-900 font-bold px-5 py-5 rounded-md text-center">{sccMsg}</div>}
+                      {/* {errMsg!=="" && <div className="bg-red-300 text-red-900 font-bold px-5 py-5 rounded-md text-center">{errMsg}</div>} */}
+                      {/* {sccMsg!=="" && <div className="bg-green-300 text-green-900 font-bold px-5 py-5 rounded-md text-center">{sccMsg}</div>} */}
                       <label className="mb-2 font-bold text-lg" htmlFor="email">Email Adress :</label>
-                      <input onChange={e=>this.setState({email: e.target.value})} className="pl-8 border-2 rounded-2xl h-16 mb-4" type="email" name="email" id="" placeholder="Enter your email adress"/>
+                      <input onChange={e=>this.setState({email: e.target.value})} className="w-full pl-8 border-2 rounded-2xl h-16 mb-4 md:pl-8 border-2 rounded-2xl h-16 mb-4" type="email" name="email" id="" placeholder="Enter your email adress"/>
                       <label className="mb-2 font-bold text-lg" htmlFor="password">Password :</label>
                       <input onChange={e=>this.setState({password: e.target.value})} className="pl-8 border-2 rounded-2xl h-16 mb-4	" type="password" name="password" id="" placeholder="Enter your password"/>
                       <label className="mb-2 font-bold text-lg" htmlFor="phoneNoumber">Phone Number :</label>

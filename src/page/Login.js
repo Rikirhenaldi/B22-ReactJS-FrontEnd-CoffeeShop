@@ -38,19 +38,19 @@ class Login extends React.Component {
       const {errMsg} = this.props.auth
         return (
           <div>
-          <section className="flex flex-row">
-            <div className="img">
+          <section className="flex flex-row justify-center items-center md: flex flex-row">
+            <div className="img sm:hidden md:block">
               <img className="" src={bannerlogin} alt=""/>
             </div>
-            <div className="w-8/12">
-              <div className="flex flex-col justify-between mb-16 mt-16">
-                <div className="logo flex justify-between mb-10">
-                  <div className="flex items-center">
-                    <figure className="ml-16 "><img src={logo} alt=""/></figure>
-                    <figcaption className="ml-4 text-sm font-bold">Coffee Shop</figcaption>
+            <div className="w-screen px-24 md:w-8/12">
+              <div className="flex flex-col justify-between mb-16 mt-6 md:flex flex-col justify-between mb-16 mt-16">
+                <div className="w-full logo flex justify-between mb-10 md:logo flex justify-between mb-10">
+                  <div className="flex items-center md:flex items-center">
+                    <figure className="md:ml-16 "><img src={logo} alt=""/></figure>
+                    <figcaption className="ml-4 md:ml-4 text-sm font-bold">Coffee Shop</figcaption>
                   </div>
-                  <div className="flex justify-center items-center">
-                    <button className="flex mr-16 justify-center items-center font-medium h-9 w-32 bg-yellow-400 py-3 px-8 rounded-full text-sm">
+                  <div className="flex justify-center items-center -mr-16 md:flex justify-center items-center">
+                    <button className="flex justify-center items-center font-medium h-9 w-32 bg-yellow-400 py-3 px-8 rounded-full text-sm md:flex mr-16 justify-center items-center font-medium h-9 w-32 bg-yellow-400 py-3 px-8 rounded-full text-sm">
                       <Link to="/Register">
                         Sign Up 
                       </Link>
@@ -58,15 +58,15 @@ class Login extends React.Component {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center items-center">
-                  <form onSubmit={this.onLogin} className="flex flex-col w-8/12">
+                  <form onSubmit={this.onLogin} className="w-full flex flex-col justify-center items-center md:flex flex-col w-8/12">
                     <div className="mb-8 text-center text-3xl font-bold text-yellow-800">Login</div>
-                    {errMsg!=="" && <div className="bg-red-300 text-red-900 font-bold px-5 py-5 rounded-md">{errMsg}</div>}
-                    <label className="mb-2 font-bold text-lg">Email Adress :</label>
-                    <input onChange={e=>this.setState({email: e.target.value})} className="pl-8 border-2 rounded-2xl h-16 mb-4" type="email" placeholder="Enter your email adress"/>
-                    <label className="mb-2 font-bold text-lg">Password :</label>
-                    <input onChange={e=>this.setState({password: e.target.value})} className="pl-8 border-2 rounded-2xl h-16 mb-4	" type="password" placeholder="Enter your password"/>
-                    <div className="mb-8 font-bold text-lg underline text-yellow-900"><Link to="/Forgotpassword">Forgot Password</Link></div>
-                    <button className="mb-4 bg-yellow-400 w-full h-16 rounded-2xl font-bold text-lg" type="submit" >Login</button>
+                    {/* {errMsg !=="" && <div className="bg-red-300 text-red-900 font-bold px-5 py-5 rounded-md">{errMsg}</div>} */}
+                    <label className="w-full mb-2 font-bold text-lg md:mb-2 font-bold text-lg">Email Adress :</label>
+                    <input onChange={e=>this.setState({email: e.target.value})} className="w-full pl-8 border-2 rounded-2xl h-16 mb-4 md:pl-8 border-2 rounded-2xl h-16 mb-4" type="email" placeholder="Enter your email adress"/>
+                    <label className="w-full mb-2 font-bold text-lg md:mb-2 font-bold text-lg">Password :</label>
+                    <input onChange={e=>this.setState({password: e.target.value})} className="w-full pl-8 border-2 rounded-2xl h-16 mb-4  md:pl-8 border-2 rounded-2xl h-16 mb-4	" type="password" placeholder="Enter your password"/>
+                    <div className="w-full mb-8 font-bold text-lg underline text-yellow-900 md:mb-8 font-bold text-lg underline text-yellow-900"><Link to="/Forgotpassword">Forgot Password</Link></div>
+                    <button className="mb-8 md:mb-4 bg-yellow-400 w-full h-16 rounded-2xl font-bold text-lg" type="submit" >Login</button>
                     <button className="mb-4 bg-white shadow-xl w-full h-16 rounded-2xl items-center font-bold text-lg"><img className="w-6 relative left-40 top-4" src={glogo.png} alt=""/><span className="relative bottom-2">Sign Up with Google</span></button>
                   </form>
                 </div>

@@ -2,7 +2,8 @@ const initialState = {
   data: [],
   details: {},
   order : {},
-  pageInfo: {}
+  pageInfo: {},
+  search: {}
 }
 
 const products = (state= initialState, action) => {
@@ -30,6 +31,23 @@ const products = (state= initialState, action) => {
         details: action.payload,
         order: action.payload.order
       }
+    }
+    case 'SEARCH_PRODUCT': {
+      return {
+        ...state,
+        search: action.payload.products,
+        pageInfo: action.payload.pageInfo
+      } 
+    }
+    case 'SEARCH_GET_NEXT': {
+      return {
+        ...state,
+        search:[ 
+          ...state.data,
+          ...action.payload.products
+        ],
+        pageInfo: action.payload.pageInfo
+      } 
     }
     default: {
       return{

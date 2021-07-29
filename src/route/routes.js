@@ -16,6 +16,7 @@ import {connect} from 'react-redux'
 import propTypes from 'prop-types'
 import PrivateRoute from '../component/PrivateRoute'
 import {authLogOut} from '../redux/actions/auth'
+import Search from '../page/Search'
 
 class Routes extends Component{
   render(){
@@ -40,6 +41,7 @@ class Routes extends Component{
             <HistoryDetails/>
           </PrivateRoute>
           <Route path="/" exact component={Home} />
+          <Route path="/products" exact component={Search} />
           <Route path="/Forgotpassword" component={ForgotPassword} />
           <Route  path="/Product/:id" component={ProductDetails} />
         </Switch>

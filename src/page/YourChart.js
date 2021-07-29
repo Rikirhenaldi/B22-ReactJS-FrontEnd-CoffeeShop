@@ -23,11 +23,7 @@ class YourChart extends React.Component {
       const {token} = this.props.auth
       const data = products
       const auth = token
-      if(data.length <= 1){
-        this.props.postPayment2(data.order?.idProduct, data.order?.amount, auth)
-      }else{
         this.props.postPayment(data, auth)
-      }
     }
 
     render() {

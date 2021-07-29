@@ -27,7 +27,9 @@ const Navbar = ({auth, authLogOut}) => {
             <ul className="rightnav flex justify-center items-center space-x-8">
               {auth.token !==null ? 
                 <ul className="listrightnav flex justify-center items-center space-x-8">
-                  <li className="flex justify-end font-medium text-3xl"><FiSearch size='25'/></li>
+                  <li className="flex justify-end font-medium text-3xl">
+                    <Link to="/products"><FiSearch size='25'/></Link>
+                  </li>
                   <li className="flex flex-row  justify-end font-medium text-4xl rounded-full">
                     <Link to=""><img className="w-8" src={logoChat} alt=""/></Link>
                     <div className=" relative bottom-2 right-10 w-4 h-4 rounded-full bg-red-800 text-xs text-white flex justify-center items-center">1</div>

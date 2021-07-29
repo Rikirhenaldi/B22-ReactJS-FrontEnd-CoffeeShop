@@ -9,21 +9,21 @@ import {Link} from 'react-router-dom'
 class Footer extends React.Component{
     render(){
         return(
-          <footer className="flex items-center w-full h-96 bg-gray-100">
-            <div className="satu">
+          <footer className="flex items-center justify-center md: flex items-center w-full h-96 bg-gray-100 pt-20">
+            <div className="satu sm:mr-20 -mt-14">
               <div className="flex mb-5">
-                <figure className="ml-40 "><img src={logo} alt=""/></figure>
+                <figure className="ml-10 md:ml-40 "><img src={logo} alt=""/></figure>
                 <figcaption className="ml-4 text-lg font-medium">Coffee Shop</figcaption>
               </div>
-              <div className="flex mb-8 ml-40">
-                <p className="mr-96 pr-10">Coffee Shop is a store that sells some good meals, and especially coffee. We provide high quality beans</p>
+              <div className=" md:flex mb-8 ml-40">
+                <p className="footerText mr-96 pr-10 block">Coffee Shop is a store that sells some good meals, and especially coffee. We provide high quality beans</p>
               </div>
-              <div className="ml-40 text-yellow-800 mb-10 flex flex-row">
+              <div className="ml-10 md:ml-40 text-yellow-800 mb-10 flex flex-row">
                 <div className="mr-6 bg-yellow-400 w-10 h-10 rounded-full flex justify-center items-center"><FaFacebookF size="20"/></div>
                 <div className="mr-6 bg-yellow-400 w-10 h-10 rounded-full flex justify-center items-center"><FaTwitter size="20"/></div>
                 <div className="mr-6 bg-yellow-400 w-10 h-10 rounded-full flex justify-center items-center"><RiInstagramFill size="20"/></div>
               </div>
-              <div className="ml-40 text-sm">©2020CoffeeStore</div>
+              <div className="ml-10 md:ml-40 text-sm">©2020CoffeeStore</div>
             </div>
 
             <div className="dua mr-32">

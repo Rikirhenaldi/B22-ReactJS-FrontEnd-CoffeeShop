@@ -20,6 +20,7 @@ export const authLogin = (email, password) => {
         payload: data.results.token
     })
     }catch(err){
+      console.log("ini eror kenapa" ,err);
       dispatch({
         type: 'AUTH_LOGIN_FAILED',
         payload: err.response.data.message

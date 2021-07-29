@@ -376,3 +376,17 @@ input[type='checkbox']:checked:after {
   width: 310px;
   height: 418px;
 }
+.boxSearch{
+  height: fit-content;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+@media (max-width: 640px){
+  .img{
+    display: "none",
+  }
+  .footerText{
+    display: none;
+  }
+}

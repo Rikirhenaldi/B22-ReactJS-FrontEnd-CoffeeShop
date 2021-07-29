@@ -28,6 +28,32 @@ export const getProducts = (url) => {
   }
 }
 
+export const searchProducts = (search, sort='price') => {
+  if(!search.startsWith('http')){
+    return async (dispatch) => {
+      const {data} = await http().get(`${URL}/products/?search=${search}&col=${sort}`,)
+      dispatch({
+        type: 'SEARCH_PRODUCT',
+        payload: {
+          products: data.results,
+          pageInfo: data.pageInfo
+        }
+    })
+    }
+  }else{
+    return async (dispatch) => {
+      const {data} = await http().get(search)
+      dispatch({
+        type: 'SEARCH_GET_NEXT',
+        payload: {
+          products: data.results,
+          pageInfo: data.pageInfo
+        }
+      })
+    }
+  }
+}
+
 export const getDetails = (id) => {
   return async (dispatch) => {
     const {data} = await http().get(`${URL}/products/${id}`)

@@ -6,30 +6,40 @@ import { getHistoryProducts } from '../redux/actions/history';
 import {FaPencilAlt} from 'react-icons/fa'
 import { putProfile } from '../redux/actions/profile';
 class Profile extends React.Component {
-    state = {
-      isDisabled: true,
-      email: "",
-      img: null,
-      name: "",
-      phoneNumber: "",
-      address: "",
-    }
-    componentDidMount(){
+    constructor(props){
+      super(props)
+      this.state = {
+        isDisabled: true,
+        email: "",
+        img: "",
+        name: "",
+        phoneNumber: "",
+        address: "",
+      }
+  } 
+    async componentDidMount(){
       const {token} = this.props.auth
-      this.props.getProfile(token)
-      this.props.getHistoryProducts(token)
+      await this.props.getProfile(token)
+      await this.props.getHistoryProducts(token)
+      const {user} = this.props.profile?.data
+      this.setState({email: user[0].email})
+      this.setState({name: user[0].name})
+      this.setState({img: user[0].img})
+      this.setState({phoneNumber: user[0].phoneNumber})
+      this.setState({address: user[0].address})
+      console.log("ini email setstate", this.state);
     }
+
     handleSubmitClicked() {
       this.setState({
         isDisabled: false,
       });
     }
-    onUpdateProfile =(e)=>{
+    onUpdateProfile =(e) => {
       e.preventDefault()
       const {token} = this.props.auth
       const {email, img, name, phoneNumber,address} = this.state
       this.props.putProfile({email, img, name, phoneNumber, address}, token)
-      location.reload()
     }
     // emailUpdate = (e) => {
     //   const  {user} = this.props.profile?.data
