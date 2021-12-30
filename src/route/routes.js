@@ -17,6 +17,7 @@ import propTypes from 'prop-types'
 import PrivateRoute from '../component/PrivateRoute'
 import {authLogOut} from '../redux/actions/auth'
 import Search from '../page/Search'
+import Chats from '../page/Chats'
 
 class Routes extends Component{
   render(){
@@ -33,6 +34,9 @@ class Routes extends Component{
           <Route path="/Product/Category/:id" component={Product} />
           <PrivateRoute path="/Yourcart">
             <YourChart/>
+          </PrivateRoute>
+          <PrivateRoute path="/Chat">
+            <Chats/>
           </PrivateRoute>
           <PrivateRoute path="/History">
             <History/>

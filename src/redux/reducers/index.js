@@ -8,6 +8,7 @@ import products from './products'
 import payment from './payment'
 import history from './history'
 import profile from './profile'
+import chats from './chats'
 
 const persistAuth = {
   storage,
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   products,
   payment,
   history,
-  profile
+  profile,
+  chats
 })
 
 export default rootReducer

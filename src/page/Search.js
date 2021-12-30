@@ -56,15 +56,17 @@ class Search extends Component {
 
   loadMore = async () => {
     const {nextPage} = await this.props.products.pageInfo
-      await this.props.searchProducts(nextPage)
-      await this.setState({data: this.props.products.search})
+      await this.props.searchProducts(nextPage).then(() => {
+      this.setState({data: this.props.products.search})
+      })
       console.log("ini next page" ,nextPage)
   }
 
   reloadData = async () => {
     const {prevPage} = await this.props.products.pageInfo
-      await this.props.searchProducts(prevPage)
-      await this.setState({data: this.props.products.search})
+      await this.props.searchProducts(prevPage).then(() => {
+      this.setState({data: this.props.products.search})
+      })
       console.log("ini next page" ,prevPage)
   }
 
@@ -81,6 +83,11 @@ class Search extends Component {
                 <i className="relative top-3 -left-64"><FiSearch size='25'/></i> 
               </div>
             </div>
+            {/* <div>
+              <select>
+                <option></option>
+              </select>
+            </div> */}
           </div>
           <div className="boxSearch" >
           <div>

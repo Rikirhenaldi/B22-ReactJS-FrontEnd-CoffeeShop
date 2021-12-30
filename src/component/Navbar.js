@@ -31,7 +31,7 @@ const Navbar = ({auth, authLogOut}) => {
                     <Link to="/products"><FiSearch size='25'/></Link>
                   </li>
                   <li className="flex flex-row  justify-end font-medium text-4xl rounded-full">
-                    <Link to=""><img className="w-8" src={logoChat} alt=""/></Link>
+                    <Link to="/Chat"><img className="w-8" src={logoChat} alt=""/></Link>
                     <div className=" relative bottom-2 right-10 w-4 h-4 rounded-full bg-red-800 text-xs text-white flex justify-center items-center">1</div>
                   </li>
                   <li className="flex justify-end font-medium text-sm rounded-full"><Link to="/Profile"><img className="rounded-full w-8" src={userPict} alt=""/></Link></li>

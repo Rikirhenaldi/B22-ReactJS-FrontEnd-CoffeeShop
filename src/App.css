@@ -382,6 +382,66 @@ input[type='checkbox']:checked:after {
   padding-bottom: 30px;
 }
 
+.bannerChats{
+  background: url("./asset/img/BannerChats.png");
+  height: 900px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+}
+.parentChats{
+  height: 100vh;
+  width: 100%;
+  background-color: aliceblue;
+  margin: auto;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.chatsList{
+  height: 100vh;
+  width: 35%;
+  background-color: #6A4029;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.chatsRoom{
+  background-color: white;
+  height: 100vh;
+  width: 65%;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+.chatBoxRoom{
+  height: 68%;
+}
+.inputSize{
+  width: 70%;
+}
+.chatsListItem{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chatsRoomItem{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #6A4029;  
+  border-top-right-radius: 30px;
+}
+.cardmessage{
+  max-height: 50%;
+  width: 350px;
+}
+
 @media (max-width: 640px){
   .img{
     display: "none",

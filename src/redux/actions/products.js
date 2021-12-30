@@ -1,5 +1,6 @@
 import { http } from "../../helpers/http"
 
+// eslint-disable-next-line no-undef
 const {REACT_APP_BACKEND_URL : URL} = process.env
 
 export const getProducts = (url) => {
