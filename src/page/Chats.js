@@ -16,8 +16,8 @@ import flatchat from '../asset/img/flatchat.png'
 import  { Redirect } from 'react-router-dom'
 import FlatList from 'flatlist-react'
 import { io } from 'socket.io-client'
-// const socket = io('http://localhost:8080')
-const socket = io('https://coffee-shop-app24.herokuapp.com')
+const socket = io('http://localhost:8080')
+// const socket = io('https://coffee-shop-app24.herokuapp.com')
 
 class Chats extends React.Component {
     constructor(props){
